@@ -18,6 +18,18 @@ public class TestDataFactory {
         return a;
     }
 
+    /** Returns an unsaved Account — caller inserts. */
+    public static Account buildAccount(String name, Decimal annualRevenue) {
+        return new Account(Name = name, AnnualRevenue = annualRevenue);
+    }
+
+    /** Inserts and returns an Account with AnnualRevenue pre-set. */
+    public static Account createAccountWithRevenue(String name, Decimal annualRevenue) {
+        Account a = buildAccount(name, annualRevenue);
+        insert a;
+        return a;
+    }
+
     public static Opportunity createOpportunity(Id accountId, String name, Date closeDate) {
         Opportunity o = new Opportunity(
             AccountId   = accountId,
@@ -27,6 +39,16 @@ public class TestDataFactory {
         );
         insert o;
         return o;
+    }
+
+    /** Returns an unsaved Opportunity in Prospecting stage — caller inserts. */
+    public static Opportunity buildOpportunity(Id accountId, String name, Date closeDate) {
+        return new Opportunity(
+            AccountId = accountId,
+            Name      = name,
+            CloseDate = closeDate,
+            StageName = 'Prospecting'
+        );
     }
 
     public static Product2 createProduct(String name) {
