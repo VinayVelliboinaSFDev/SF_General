@@ -90,6 +90,25 @@ public class TestDataFactory {
         return oli;
     }
 
+    // ─── Scenario 05 – Case SLA Escalation ───────────────────────────────
+
+    /** Returns an unsaved Case in 'New' status — caller inserts. */
+    public static Case buildCase(String subject) {
+        return new Case(
+            Subject  = subject,
+            Status   = 'New',
+            Priority = 'Medium',
+            Origin   = 'Web'
+        );
+    }
+
+    /** Inserts and returns a Case in 'New' status with no SLA date set. */
+    public static Case createCase(String subject) {
+        Case c = buildCase(subject);
+        insert c;
+        return c;
+    }
+
     // ─── Scenario 02 – Student Attendance ────────────────────────────────
 
     public static Student__c createStudent(String name) {
