@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee__c</fullName>
+    <label>Employee</label>
+    <type>MasterDetail</type>
+    <referenceTo>Employee__c</referenceTo>
+    <relationshipLabel>Leave Requests</relationshipLabel>
+    <relationshipName>Leave_Requests</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+</CustomField>

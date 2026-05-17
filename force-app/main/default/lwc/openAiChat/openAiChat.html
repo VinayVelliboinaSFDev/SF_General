@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="OpenAI Chat">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Ask OpenAI" value={userInput} onchange={handleChange}></lightning-input>
+            <lightning-button title="Send" label="Submit" onclick={handleSubmit} class="slds-m-top_small"></lightning-button>
+            <template if:true={response}>
+                <div class="slds-box slds-m-top_medium">
+                    <p><strong>Response:</strong></p>
+                    <p>{response}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

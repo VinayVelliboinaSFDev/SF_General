@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Week_Key__c</fullName>
+    <label>Week Key</label>
+    <type>Text</type>
+    <length>20</length>
+    <externalId>false</externalId>
+    <unique>false</unique>
+    <description>ISO year-week identifier, e.g. 2026-20. Used to prevent duplicate warnings for the same week.</description>
+</CustomField>
